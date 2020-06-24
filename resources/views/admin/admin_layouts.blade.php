@@ -76,11 +76,9 @@
                 </div><!-- menu-item -->
             </a><!-- sl-menu-link -->
             <ul class="sl-menu-sub nav flex-column">
-                <li class="nav-item"><a href="chart-morris.html" class="nav-link">Morris Charts</a></li>
-                <li class="nav-item"><a href="chart-flot.html" class="nav-link">Flot Charts</a></li>
-                <li class="nav-item"><a href="chart-chartjs.html" class="nav-link">Chart JS</a></li>
-                <li class="nav-item"><a href="chart-rickshaw.html" class="nav-link">Rickshaw</a></li>
-                <li class="nav-item"><a href="chart-sparkline.html" class="nav-link">Sparkline</a></li>
+                <li class="nav-item"><a href="{{ route('categories') }}" class="nav-link">Category</a></li>
+                <li class="nav-item"><a href="chart-flot.html" class="nav-link">Sub Category</a></li>
+                <li class="nav-item"><a href="chart-chartjs.html" class="nav-link">Brand</a></li>
             </ul>
             <a href="#" class="sl-menu-link">
                 <div class="sl-menu-item">

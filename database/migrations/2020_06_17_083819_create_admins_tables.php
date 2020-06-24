@@ -19,6 +19,7 @@ class CreateAdminsTables extends Migration
             $table->string('phone')->nullabel();
             $table->string('email')->unique();
             $table->string('password');
+            $table->rememberToken();
             $table->timestamps();
         });
     }
