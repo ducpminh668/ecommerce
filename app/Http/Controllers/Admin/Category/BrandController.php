@@ -33,7 +33,7 @@ class BrandController extends Controller
             $image_name = date('dmy_H_s_i');
             $ext = strtolower($image->getClientOriginalExtension());
             $image_full_name = $image_name . '.' . $ext;
-            $upload_path = 'public/media/brand/';
+            $upload_path = 'media/brand/';
             $image_url = $upload_path . $image_full_name;
             $success = $image->move($upload_path, $image_full_name);
 
@@ -87,7 +87,7 @@ class BrandController extends Controller
             $image_name = date('dmy_H_s_i');
             $ext = strtolower($image->getClientOriginalExtension());
             $image_full_name = $image_name . '.' . $ext;
-            $upload_path = 'public/media/brand/';
+            $upload_path = 'media/brand/';
             $image_url = $upload_path . $image_full_name;
             $success = $image->move($upload_path, $image_full_name);
 

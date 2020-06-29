@@ -47,22 +47,32 @@ Route::namespace ('Admin')->group(function () {
     Route::get('admin/newsletter', 'Category\CouponController@newsLatter')->name('admin.newsletters');
     Route::get('delete/sub/{id}', 'Category\CouponController@DeleteSub');
 
-    // Get subcategory by category_id
+    // Get subcategory  by category_id
     Route::get('get/subcategory/{category_id}', 'ProductController@GetSubcat');
 
     // Product All Route
     Route::get('product/all', 'ProductController@index')->name('all.product');
     Route::get('product/add', 'ProductController@create')->name('add.product');
     Route::post('store/product', 'ProductController@store')->name('store.product');
-
     Route::get('delete/product/{id}', 'ProductController@DeleteProduct');
     Route::get('inactive/product/{id}', 'ProductController@inactive');
     Route::get('active/product/{id}', 'ProductController@active');
-
     Route::get('view/product/{id}', 'ProductController@ViewProduct');
     Route::get('edit/product/{id}', 'ProductController@EditProduct');
-
     Route::post('update/product/withoutphoto/{id}', 'ProductController@UpdateProductWithoutPhoto');
-
     Route::post('update/product/photo/{id}', 'ProductController@UpdateProductPhoto');
+
+    // Blog Admin All
+    Route::get('blog/category/list', 'PostController@BlogCatList')->name('add.blog.categorylist');
+    Route::post('store/blog', 'PostController@BlogCatStore')->name('store.blog.category');
+    Route::get('delete/blogcategory/{id}', 'PostController@DeleteBlogCat');
+    Route::get('edit/blogcategory/{id}', 'PostController@EditBlogCat');
+    Route::post('update/blog/category/{id}', 'PostController@UpdateBlogCat');
+
+    Route::get('add/post', 'PostController@Create')->name('add.blogpost');
+    Route::get('all/post', 'PostController@index')->name('all.blogpost');
+    Route::post('store/post', 'PostController@store')->name('store.post');
+    Route::get('delete/post/{id}', 'PostController@DeletePost');
+    Route::get('edit/post/{id}', 'PostController@EditPost');
+    Route::post('update/post/{id}', 'PostController@UpdatePost');
 });
