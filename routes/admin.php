@@ -4,7 +4,7 @@ Route::namespace ('Admin')->group(function () {
     Route::get('/login', 'LoginController@showLoginForm');
     Route::post('/login', 'LoginController@login')->name('admin.login');
     Route::group(['middleware' => ['auth:admin']], function () {
-        Route::get('/', 'HomeController@index');
+        Route::get('/', 'HomeController@index')->name('admin.home');
         Route::get('/logout', 'LoginController@logout')->name('admin.logout');
     });
     // Admin password reset
@@ -43,4 +43,26 @@ Route::namespace ('Admin')->group(function () {
     Route::get('edit/coupon/{id}', 'Category\CouponController@EditCoupon');
     Route::post('update/coupon/{id}', 'Category\CouponController@UpdateCoupon');
 
+    // News letters
+    Route::get('admin/newsletter', 'Category\CouponController@newsLatter')->name('admin.newsletters');
+    Route::get('delete/sub/{id}', 'Category\CouponController@DeleteSub');
+
+    // Get subcategory by category_id
+    Route::get('get/subcategory/{category_id}', 'ProductController@GetSubcat');
+
+    // Product All Route
+    Route::get('product/all', 'ProductController@index')->name('all.product');
+    Route::get('product/add', 'ProductController@create')->name('add.product');
+    Route::post('store/product', 'ProductController@store')->name('store.product');
+
+    Route::get('delete/product/{id}', 'ProductController@DeleteProduct');
+    Route::get('inactive/product/{id}', 'ProductController@inactive');
+    Route::get('active/product/{id}', 'ProductController@active');
+
+    Route::get('view/product/{id}', 'ProductController@ViewProduct');
+    Route::get('edit/product/{id}', 'ProductController@EditProduct');
+
+    Route::post('update/product/withoutphoto/{id}', 'ProductController@UpdateProductWithoutPhoto');
+
+    Route::post('update/product/photo/{id}', 'ProductController@UpdateProductPhoto');
 });
