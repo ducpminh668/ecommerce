@@ -49,8 +49,10 @@
 
                         <div class="col-lg-6">
                             <div class="form-group">
-                                <label class="form-control-label">Discount Price: <span
-                                        class="tx-danger">*</span></label>
+                                <label class="form-control-label">Discount Price:
+                                    {{-- <span
+                                        class="tx-danger">*</span> --}}
+                                </label>
                                 <input class="form-control" type="text" name="discount_price"
                                     placeholder="Discount Price">
                             </div>
@@ -164,7 +166,7 @@
                             <div class="form-group">
                                 <label class="form-control-label">Image Two: <span class="tx-danger">*</span></label>
                                 <label class="custom-file">
-                                    <input type="file"  class="custom-file-input" name="image_two"
+                                    <input type="file" class="custom-file-input" name="image_two"
                                         onchange="readURL2(this);" required="">
                                     <span class="custom-file-control"></span>
                                     <img src="#" id="two">
@@ -180,7 +182,7 @@
                             <div class="form-group">
                                 <label class="form-control-label">Image Three: <span class="tx-danger">*</span></label>
                                 <label class="custom-file">
-                                    <input type="file"  class="custom-file-input" name="image_three"
+                                    <input type="file" class="custom-file-input" name="image_three"
                                         onchange="readURL3(this);" required="">
                                     <span class="custom-file-control"></span>
                                     <img src="#" id="three">
@@ -294,10 +296,9 @@
               dataType:"json",
               success:function(data) { 
               var d =$('select[name="subcategory_id"]').empty();
+              $('select[name="subcategory_id"]').append('<option value="">Select Sub category</option>')
               $.each(data, function(key, value){
-              
-              $('select[name="subcategory_id"]').append('<option value="'+ value.id + '">' + value.subcategory_name + '</option>');
-
+                $('select[name="subcategory_id"]').append('<option value="'+ value.id + '">' + value.subcategory_name + '</option>');
               });
               },
             });
